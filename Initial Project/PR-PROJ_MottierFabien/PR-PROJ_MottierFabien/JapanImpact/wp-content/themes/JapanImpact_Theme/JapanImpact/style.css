@@ -1,0 +1,305 @@
+/*
+Theme Name: JapanImpact
+Theme URI: 127.0.0.1
+Description: Theme pour le site du Japan Impact
+Version: 1.0
+Author: Tony Clavien
+*/
+
+strong {
+	color: #a00;
+}
+
+a {
+	color: #353533;
+}
+
+body {
+	font-family: verdana, sans-serif;
+	font-size: 10pt;
+	width:960px;
+	position:relative;
+	margin:0 auto;
+	/*background-image: url("images/background.jpg");
+	background-repeat: no-repeat; 
+	background-attachment: fixed; 
+	background-size: cover; */
+}
+
+header,footer { 
+	display:block;
+}
+
+div {
+	display:block;
+}
+
+/************ Header du Site **************/
+.site-header { 
+	height: 120px; 
+	background-image: url("images/banner.png");
+	background-repeat:no-repeat;
+	background-position: center center;
+}
+.site-header p {
+	margin: 0px;
+	text-align: center;
+}
+/** image du header */
+.site-header img { 
+	display:block;
+	margin-top: 10px; 
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.page-info h1{
+	font-size: 140%;
+	font-weight: bold;
+	padding: 20px 0;
+}
+
+.content-separator{
+	border-top: 1px solid #a00;
+	margin: 20px 0;
+}
+
+/********************** Main Navigation **********************/
+#main-navigation {
+	border-radius: 10px;
+	height: 24px;
+	padding-top: 6px;
+}
+#main-navigation ul { list-style: none; margin: 0; }
+#main-navigation li { float: left; }
+#main-navigation span {
+	cursor: default;
+	padding: 6px 10px 7px 10px;
+}
+#main-navigation a {
+	padding: 6px 10px 7px 10px;
+	text-decoration: none;
+}
+
+#main-navigation {
+	background-color: #800;
+	background-image: url('images/gradient.gif');
+	background-repeat: repeat-x;
+	background-position: 0px 0px;
+	border: 1px solid #600;
+}
+#main-navigation a { color: #f0f0f0; }
+#main-navigation a:hover {
+	background-image: url('images/gradient.gif');
+	background-repeat: repeat-x;
+	background-position: 0px -32px;
+}
+
+#main-navigation span {
+	background-image: url('images/gradient.gif');
+	background-repeat: repeat-x;
+	background-position: 0px -64px;
+	color: #f0f0f0;
+}
+/********************** Sidebar **********************/
+.sidebar {
+	float: left;
+	width: 20%;
+}
+.sidebar-block {
+	border-radius: 10px;
+	margin-bottom: 11.1%;
+	padding: 0px 0px 4px 3px;
+}
+.sidebar-block h2 { 
+	font-weight: bold;
+	padding: 0px 0px 3px 0px; 
+	font-size:10pt;
+	text-align: center;
+	margin-bottom: 5px;
+	margin-top: 3px;
+}
+.sidebar-block h2 label { font-weight: bold; }
+.sidebar-block-content { padding: 5px; text-align:center; }
+#list ul { 
+	list-style: none;
+	margin: 0 0 5px 0;
+	list-style-type: none;
+	list-style: none;
+	margin: 0; 
+	}
+#list li{
+	list-style-type: none;
+}
+#list li:before { content: '» ';color: #a00; }
+#list a { 
+	text-decoration: none;
+	color: #353533;
+}
+#list a:hover { 
+	text-decoration: underline;
+	color: #a00;
+}
+
+#search-query {
+    border-radius: 5px;
+    margin-right: 2%;
+    width: 80%;
+    vertical-align: bottom; 
+}
+#search-submit {
+    cursor: pointer;
+    background: none;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+#search-submit img { 
+	vertical-align: bottom; 
+}
+
+.sidebar-block-content span { color: #353533; }
+.sidebar-block-content form { margin-bottom: 0px; }
+.sidebar-block-content .active { color: #a00; }
+
+.content-separator { border-top: 1px solid #a00; }
+
+.sidebar-block { border: 1px solid #ddd; }
+.sidebar-block h2 {
+	border-bottom: 1px solid #a00;
+}
+
+#search-query { border: 1px solid #ddd; }
+
+.primary-sidebar li {
+	list-style-type:none;
+}
+
+.qtrans_language_chooser {
+	list-style: none; 
+	-webkit-padding-start: 0px;
+}
+
+.qtrans_language_chooser li {
+	display: inline-block;
+	list-style-type: none;
+	padding-right:10;
+}
+
+/***************Search Form ************************/
+input#s{
+	width:160px;
+}
+
+/***************Post ********************************/
+.content{
+	margin-left : 22%;
+	position: relative;
+}
+.post {
+	margin-bottom: 30px;
+}
+.post-title {
+	color: #a00;
+	border-bottom: 1px solid #ddd;	
+}
+.post h2 {
+	color: #a00;
+	border-bottom: 1px solid #ddd;	
+}
+.post-title a {text-decoration:none;}
+.post-title a:link {color: #a00;}
+.post-title a:visited {color:gray;}
+.post-title a:hover{color:white;}
+.post-title a:active{color:white;}
+
+.post-info {
+	color:#aaa;
+	font-style: italic;
+	font-size:60%;
+	text-align: right;
+	font-weight: normal;
+}
+
+.post-info a:link {color: #7f7f7f;}
+.post-info a:visited {color:d4d4d4;}
+.post-info a:hover{color:black;}
+.post-info a:active{color:black;}
+
+/********************** Footer **********************/
+footer {
+	clear: both;
+	font-size: 80%;
+	text-align: center;
+}
+
+/********************** Widget **********************/
+.info-panel{
+	background-color: #eee;
+	border: 1px dashed #a00;
+	border-radius:10px;
+	position:absolute;
+	opacity:0.8;
+	width:200px;
+	padding:5px;
+	right:50;
+	top:19; /* 25 pour deux lignes */
+	font-size:95%;
+}
+
+.info-panel-head{
+	background-repeat:no-repeat;
+	background-image: url("images/favicon2.png");
+	top:-25;
+	right:-25;
+	position:absolute;
+	width:50px;
+	height:50px;
+}
+
+.info-panel h2{
+	text-align:center;
+	font-weight:bold;
+	font-size:100%;
+}
+
+/********table***********/
+td{
+	padding:5px;
+}
+
+dt{
+	font-weight:bold;
+	position:relative;
+}
+
+dd {
+	margin:10px 0px 20px 20px;
+}
+
+.top{
+	vertical-align:top;
+}
+
+/************styled table for prices *********/
+
+.styled{
+	border-radius:5px;
+	margin:10px auto;
+	caption-side:bottom;
+	border:1px solid #ddd;
+}
+
+.styled thead th{
+	border-bottom:1px solid #a00;
+	font-weight:bold;
+}
+
+.styled tbody th{
+	font-style:italic;
+	text-align:left;
+}
+
+.styled th,.styled td{
+	padding:3px;
+}

@@ -1,0 +1,72 @@
+.BaTi_Admin_div
+{
+    width: 500px;
+	text-align: justify;
+}
+
+.BaTi_Admin_Error
+{
+	font-size: x-small;
+	font-style: italic;
+}
+
+#BaTi_Admin_ManageDB_Info_NbrEvent
+{
+	font-size: x-small;
+	font-style: italic;
+}
+
+.BaTi_Admin_submit
+{
+	vertical-align: baseline;
+	background: none repeat scroll 0 0 #2EA2CC;
+    border-color: #0074A2;
+    box-shadow: 0 1px 0 rgba(120, 200, 230, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15);
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    height: 28px;
+    line-height: 26px;
+    margin: 0;
+    padding: 0 10px 1px;
+    white-space: nowrap;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+.BaTi_Admin_submit:focus, .BaTi_Admin_submit:hover
+{
+	background: none repeat scroll 0 0 #1E8CBE;
+	border-color: #0074A2;
+	box-shadow: 0 1px 0 rgba(120, 200, 230, 0.6) inset;
+	color: #FFFFFF;
+}
+
+.BaTi_Admin_textbox
+{
+	background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07) inset;
+    color: #333333;
+    outline: medium none;
+    transition: border-color 0.05s ease-in-out 0s;
+    margin: 1px;
+    padding: 3px 5px;
+    border-radius: 0;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: inherit;
+    box-sizing: border-box;
+}
+
+.BaTi_Admin_textbox:focus
+{
+	border-color: #5B9DD9;
+	box_shadow: 0 0 2px rgba(30, 140, 190, 0.8);
+}

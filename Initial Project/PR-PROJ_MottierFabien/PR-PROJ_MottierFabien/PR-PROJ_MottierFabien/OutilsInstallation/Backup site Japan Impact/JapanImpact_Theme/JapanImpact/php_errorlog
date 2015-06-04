@@ -1,0 +1,4 @@
+[09-Oct-2014 02:36:19 CST6CDT] PHP Fatal error:  Call to undefined function get_header() in /home/japanimp/public_html/wp-content/themes/JapanImpact/index.php on line 2
+[10-Nov-2014 04:38:15 CST6CDT] PHP Fatal error:  Call to undefined function get_header() in /home/japanimp/public_html/wp-content/themes/JapanImpact/index.php on line 2
+[22-Feb-2015 13:05:17 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home/japanimp/public_html/wp-content/themes/JapanImpact/index.php on line 2
+[22-Feb-2015 13:07:29 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home/japanimp/public_html/wp-content/themes/JapanImpact/index.php on line 2
