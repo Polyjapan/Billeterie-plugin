@@ -3,9 +3,9 @@
 Plugin Name: BasicTicketting
 Plugin URI: 
 Description: Plugin de gestion de billeterie en ligne pour événements
-Version: 0.2
-Author: Fabien Mottier, Tony Clavien
-Author URI: www.japan-impact.ch
+Version: 0.1
+Author: Fabien Mottier
+Author URI: 
 License: GPL2
 */
 
