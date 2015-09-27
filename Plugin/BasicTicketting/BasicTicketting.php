@@ -11,19 +11,28 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+// class inclusion
+require_once plugin_dir_path( __FILE__ ).'/db/database.php'; 
+require_once plugin_dir_path( __FILE__ ).'/menus/admin-menu.php'; 
 
-class BaTi_Plugin
-{
-	public function __construct()
-	{
-		// class inclusion
-		require_once plugin_dir_path( __FILE__ ).'/db/database.php'; 
+// hooks
+	// At the activation
+	register_activation_hook(__FILE__, array('BaTi_Install_Plugin', 'BaTi_install_DB'));
+
+	// At the uninstallation
+	register_uninstall_hook(__FILE__, array('BaTi_Install_Plugin', 'BaTi_uninstall_DB'));
 		
-		// hooks
-		// At the activation
-		register_activation_hook(__FILE__, array('BaTi_Install_Plugin', 'BaTi_install_DB'));
+	/* Register the admin menu action hook */
+	add_action( 'admin_menu','BaTi_create_admin_menu');
+	
+	/**
+	*	Arguments List
+	*	Types of tickets
+	*	Name of Events
+	*	Origins
+	*	"Image of pdf"
+	*	View List
+		List of client
+	*/
 
-		// At the uninstallation
-		register_uninstall_hook(__FILE__, array('BaTi_Install_Plugin', 'BaTi_uninstall_DB'));
-	}
-}
+	
