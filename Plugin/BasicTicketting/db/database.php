@@ -81,8 +81,20 @@ class BaTi_Install_Plugin
 					CONSTRAINT UNIQUE Unique_Fin (pcfFin)
                 ) $charset_collate;") === false)
 		{
-			trigger_error("DB ERROR : error when creating table Origine",E_ERROR);
+			trigger_error("DB ERROR : error when creating table Crowdfunding",E_ERROR);
 		}
+		
+		// Holds the origin of the tickets
+		if($wpdb->query("CREATE TABLE IF NOT EXISTS {$wpdb->prefix}BaTi_tblInteret (
+                    PKInteret INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+                    intNom VARCHAR(45) NOT NULL,
+
+                    CONSTRAINT UNIQUE Unique_Nom (intNom)
+                ) $charset_collate;") === false)
+		{
+			trigger_error("DB ERROR : error when creating table Interet",E_ERROR);
+		}
+		
 		
 		// Holds all the transaction of the client
 		if($wpdb->query("CREATE TABLE IF NOT EXISTS {$wpdb->prefix}BaTi_tblCommande (
@@ -96,6 +108,20 @@ class BaTi_Install_Plugin
 					REFERENCES {$wpdb->prefix}BaTi_tblClient(PKClient),
 					CONSTRAINT FK_Commande_Palier FOREIGN KEY (FKPalierCrowdfunding)
 					REFERENCES {$wpdb->prefix}BaTi_tblPalierCrowdfunding(PKPalierCrowdfunding)
+                )  $charset_collate;") === false)
+		{
+			trigger_error("DB ERROR : error when creating table Commande",E_ERROR);
+		}
+		
+		// Holds the interest of a client
+		if($wpdb->query("CREATE TABLE IF NOT EXISTS {$wpdb->prefix}BaTi_tblCommandeInteret (
+                    PKCommandeInteret INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+                    FKCommande INT NOT NULL,
+					FKInteret INT NOT NULL,
+					CONSTRAINT FK_CommandeInteret_Commande FOREIGN KEY (FKCommande)
+					REFERENCES {$wpdb->prefix}BaTi_tblCommande(PKCommande),
+					CONSTRAINT FK_CommandeInteret_Interet FOREIGN KEY (FKInteret)
+					REFERENCES {$wpdb->prefix}BaTi_tblInteret(PKInteret)
                 )  $charset_collate;") === false)
 		{
 			trigger_error("DB ERROR : error when creating table Commande",E_ERROR);
