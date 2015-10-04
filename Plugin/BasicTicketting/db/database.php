@@ -75,6 +75,7 @@ class BaTi_Install_Plugin
                     PKPalierCrowdfunding INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
                     pcfDebut DOUBLE NOT NULL,
 					pcfFin DOUBLE NOT NULL,
+					pcfLimite INT NOT NULL,
 					pcfTitre VARCHAR(45) NOT NULL,
 					pcfDescription LONGTEXT,
                     CONSTRAINT UNIQUE Unique_Debut (pcfDebut),
