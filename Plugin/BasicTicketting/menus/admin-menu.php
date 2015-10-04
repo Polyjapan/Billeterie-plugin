@@ -41,9 +41,21 @@
 		$TEvents = "BaTi_tblEvent";
 		$TOrigine = "BaTi_tblOrigine";
 		
+		$DEV = true;
 		
+		if($DEV == true)
+		{
+			?>
+			<div class="wrap-selection">
+					<h2> In construction</h2>
+					<p> If you want to edit some data, ask the webmaster ;) </p>
+			</div>
+			<?php
+		}
+		else
+		{
 		
-	?>
+			?>
 		
 			<div class="wrap-selection">
 				<h2> BasicTicketting Management</h2>
@@ -57,7 +69,8 @@
 				</form>
 			</div>
 			</hr>
-		<?php
+			<?php
+		}
 		
 		if (isset($_POST["BaTi_Choice_Sender"])) // if a value was selected
 		{
