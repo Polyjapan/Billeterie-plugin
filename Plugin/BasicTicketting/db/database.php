@@ -69,6 +69,21 @@ class BaTi_Install_Plugin
 		{
 			trigger_error("DB ERROR : error when creating table Origine",E_ERROR);
 		}
+		
+		// Holds the Crowdfunding information
+		if($wpdb->query("CREATE TABLE IF NOT EXISTS {$wpdb->prefix}BaTi_tblPalierCrowdfunding (
+                    PKPalierCrowdfunding INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+                    pcfDebut DOUBLE NOT NULL,
+					pcfFin DOUBLE NOT NULL,
+					pcfTitre VARCHAR(45) NOT NULL,
+					pcfDescription LONGTEXT,
+                    CONSTRAINT UNIQUE Unique_Debut (pcfDebut),
+					CONSTRAINT UNIQUE Unique_Fin (pcfFin)
+                ) $charset_collate;") === false)
+		{
+			trigger_error("DB ERROR : error when creating table Origine",E_ERROR);
+		}
+		
 		// Holds all the transaction of the client
 		if($wpdb->query("CREATE TABLE IF NOT EXISTS {$wpdb->prefix}BaTi_tblCommande (
                     PKCommande INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -76,8 +91,11 @@ class BaTi_Install_Plugin
                     comDate DATE NOT NULL,
                     comMontantTotal DOUBLE NOT NULL,
 					comValidate BOOLEAN NOT NULL,
+					FKPalierCrowdfunding INT,
 					CONSTRAINT FK_Commande_Client FOREIGN KEY (FKClient)
-					REFERENCES {$wpdb->prefix}BaTi_tblClient(PKClient)
+					REFERENCES {$wpdb->prefix}BaTi_tblClient(PKClient),
+					CONSTRAINT FK_Commande_Palier FOREIGN KEY (FKPalierCrowdfunding)
+					REFERENCES {$wpdb->prefix}BaTi_tblPalierCrowdfunding(PKPalierCrowdfunding)
                 )  $charset_collate;") === false)
 		{
 			trigger_error("DB ERROR : error when creating table Commande",E_ERROR);
@@ -86,12 +104,11 @@ class BaTi_Install_Plugin
 
 		// 	The successful generated tickets
 		if($wpdb->query("CREATE TABLE IF NOT EXISTS {$wpdb->prefix}BaTi_tblBillet (
-                    PKBillet INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+                    PKBillet INT(13) PRIMARY KEY NOT NULL AUTO_INCREMENT,
                     FKCommande INT NOT NULL,
                     FKTypeBillet INT NOT NULL,
                     FKEvent INT NOT NULL,
 					FKOrigine INT NOT NULL,
-                    bilCodeBarre INT NOT NULL,
                     bilEnterDate DATETIME,
                     CONSTRAINT UNIQUE Unique_CodeBarre (bilCodeBarre),
 					CONSTRAINT FK_Billet_Commande FOREIGN KEY (FKCommande)
