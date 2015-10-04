@@ -13,7 +13,8 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 // class inclusion
 require_once plugin_dir_path( __FILE__ ).'/db/database.php'; 
-require_once plugin_dir_path( __FILE__ ).'/menus/admin-menu.php'; 
+require_once plugin_dir_path( __FILE__ ).'/menus/admin-menu.php';
+require_once plugin_dir_path( __FILE__ ).'/core/core.php';
 
 // hooks
 	// At the activation
@@ -24,6 +25,9 @@ require_once plugin_dir_path( __FILE__ ).'/menus/admin-menu.php';
 		
 	/* Register the admin menu action hook */
 	add_action( 'admin_menu','BaTi_create_admin_menu');
+	
+	/* Register the shortcode */
+	add_shortcode('Ticketing','BaTi_getBasicTicketting');
 	
 	/**
 	*	Arguments List
