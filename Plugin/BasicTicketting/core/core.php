@@ -81,7 +81,7 @@ function BaTi_getSlider()
 {
 	$slider = "";
 	$slider .= "<p>";
-	$slider .= '<label for="amount">Montant souhaité:</label>';
+	$slider .= '<label for="BaTi_amount">Montant souhaité:</label>';
 	$slider .= '<input type="text" id="BaTi_amount" />';
 	$slider .= "</p>";
 	$slider .= '<div id="BaTi_slider"></div>';

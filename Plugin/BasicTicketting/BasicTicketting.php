@@ -30,9 +30,8 @@ require_once plugin_dir_path( __FILE__ ).'/core/core.php';
 	add_shortcode('Ticketing','BaTi_getBasicTicketting');
 	
 	function BaTi_frontend_scripts() {
-        wp_enqueue_script('jquery');
-        wp_enqueue_script('jquery-ui-core');
-		wp_enqueue_script( 'BaTi_Tickets', get_template_directory_uri() . '/js/Tickets.js', array(), '1.0.0', true 
+       	wp_enqueue_style( 'Jquery-Ui_smooth', "//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" );
+		wp_enqueue_script( 'BaTi_Tickets', plugin_dir_url( __FILE__ ) . '/js/Tickets.js', array('jquery','jquery-ui-widget'),'1.0.0');
 	}
 	add_action('wp_enqueue_scripts', 'BaTi_frontend_scripts');
 	
