@@ -61,14 +61,14 @@ function BaTi_getTickets()
 	<tr>
 		<th>Type de Billet</th>
 		<th>Quantité</th>
-		<th>Prix</th>
+		<th>Prix (CHF)</th>
 	</tr>";
 	foreach($results as $row)
 	{
 		$msg .= "<tr>";
-		$msg .= "<td>".$row->tytiNom."</td>";
+		$msg .= "<td>".$row->tybiNom."</td>";
 		$msg .= '<td><input type="number" name="amount_type'.$row->PKTypeBillet.'"></td>';
-		$msg .= "<td>".$row->tytiPrix."</td";
+		$msg .= "<td>".$row->tybiPrix."</td";
 		$msg .= "</tr>";
 	}
 	
