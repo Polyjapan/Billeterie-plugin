@@ -79,7 +79,13 @@ function BaTi_getTickets()
 
 function BaTi_getSlider()
 {
-	return "slider";
+	$slider = "";
+	$slider .= "<p>";
+	$slider .= '<label for="amount">Montant souhaité:</label>';
+	$slider .= '<input type="text" id="BaTi_amount" />';
+	$slider .= "</p>";
+	$slider .= '<div id="BaTi_slider"></div>';
+	return $slider;
 }
 
 function BaTi_getRewards()

@@ -32,6 +32,7 @@ require_once plugin_dir_path( __FILE__ ).'/core/core.php';
 	function BaTi_frontend_scripts() {
         wp_enqueue_script('jquery');
         wp_enqueue_script('jquery-ui-core');
+		wp_enqueue_script( 'BaTi_Tickets', get_template_directory_uri() . '/js/Tickets.js', array(), '1.0.0', true 
 	}
 	add_action('wp_enqueue_scripts', 'BaTi_frontend_scripts');
 	
