@@ -29,6 +29,12 @@ require_once plugin_dir_path( __FILE__ ).'/core/core.php';
 	/* Register the shortcode */
 	add_shortcode('Ticketing','BaTi_getBasicTicketting');
 	
+	function BaTi_frontend_scripts() {
+        wp_enqueue_script('jquery');
+        wp_enqueue_script('jquery-ui-core');
+	}
+	add_action('wp_enqueue_scripts', 'BaTi_frontend_scripts');
+	
 	/**
 	*	Arguments List
 	*	Types of tickets
