@@ -67,7 +67,7 @@ function BaTi_getTickets()
 	{
 		$msg .= "<tr>";
 		$msg .= "<td>".$row->tybiNom."</td>";
-		$msg .= '<td><input type="number" name="amount_type'.$row->PKTypeBillet.'"></td>';
+		$msg .= '<td><input type="number" name="amount_type'.$row->PKTypeBillet.'" min="0" ></td>';
 		$msg .= "<td>".$row->tybiPrix."</td";
 		$msg .= "</tr>";
 	}
@@ -83,6 +83,7 @@ function BaTi_getSlider()
 	$slider .= "<p>";
 	$slider .= '<label for="BaTi_amount">Montant souhaité:</label>';
 	$slider .= '<input type="text" id="BaTi_amount" />';
+	$slider .= '<label for="BaTi_amount">CHF</label>';
 	$slider .= "</p>";
 	$slider .= '<div id="BaTi_slider"></div>';
 	return $slider;
@@ -93,10 +94,19 @@ function BaTi_getRewards()
 	return "crowdfunding";
 }
 
+
 function BaTi_getInterest()
 {
+	global $wpdb;
+	$results = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}BaTi_tblInteret");
+	foreach($results as $row)
+	{
+		//TODO créer les propositions
+	}
+	// possibilité d'en ajouter ?
 	return "Interet";
 }
+
 
 /** function who display the login form */
 function BaTi_getLoginPage()
