@@ -74,7 +74,6 @@ class BaTi_Install_Plugin
 		if($wpdb->query("CREATE TABLE IF NOT EXISTS {$wpdb->prefix}BaTi_tblPalierCrowdfunding (
                     PKPalierCrowdfunding INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
                     pcfDebut DOUBLE NOT NULL,
-					pcfFin DOUBLE NOT NULL,
 					pcfLimite INT NOT NULL,
 					pcfTitre VARCHAR(45) NOT NULL,
 					pcfDescription LONGTEXT,
